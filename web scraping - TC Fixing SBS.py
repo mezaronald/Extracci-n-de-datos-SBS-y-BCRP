@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Jun 26 13:45:52 2024
-
-@author: rmezaf
-"""
 
 from selenium import webdriver
 import requests
@@ -13,8 +7,8 @@ import time
 from datetime import datetime, timedelta
 
 
-usuario = 'rmezaf'
-directorio = 'C:/Users/' + usuario + '/OneDrive - Ripley Corp/2022/08 Solicitudes/Tienda Ripley/TC/' 
+usuario = 'rmeza' # Cambiar a preferencia
+directorio = 'C:/Users/' + usuario + '/TC/'  # Cambiar a preferencia
 
 
 # URL de la página
@@ -100,11 +94,5 @@ if df[df['Fecha'] == fin_de_mes_str].empty:
 
 df.to_excel(directorio + 'TC Sunat y Fixing ' + fin_de_mes_str_2 + '.xlsx', index=False)
 
-df.to_excel(directorio + 'TC Sunat y Fixing ' + fecha_fin_string + '.xlsx', index=False)
 # Cerrar el navegador
 driver.quit()
-
-
-
-# Mostrar el DataFrame resultante
-print( df.iloc[-1])
