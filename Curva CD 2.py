@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Jul 24 10:53:14 2024
-
-@author: rmezaf
-"""
 
 from selenium import webdriver
 import requests
@@ -15,11 +10,10 @@ import os
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 
-usuario = "rmezaf"
+
 TipoCurva='CBCRS' #CDs
 #TipoCurva= 'CCPSS' #Soberana
 #TipoCurva= 'CCPEDS' #Treasuries
-
 
 FechaInicio0 = datetime.datetime(2024, 9, 2)
 FechaFin0 = datetime.datetime(2024, 9, 2)
@@ -33,9 +27,7 @@ FechaFinB = FechaFin0.strftime("%y%m%d")
 
 
 # Define la ubicación y el nombre del archivo que deseas descargar
-download_directory = "C:\\Users\\"+ usuario +"\\OneDrive - Ripley Corp\\2022\\02 Mercado\\04 Inversiones\\Curva CD\\"
-#download_directory = "C:\\Users\\"+ usuario +"\\OneDrive - Ripley Corp\\2022\\02 Mercado\\04 Inversiones\\Curvas Soberanas Mensuales\\"
-
+download_directory = "C:\\Users\\"+ usuario +"\\Curva CD\\" # Definir ruta a preferencia
 download_filename = "Curva CD " + FechaInicioB + " " + FechaFinB + ".xlsx"
 #download_filename = "Curva_Soberano_" + FechaInicioC + ".xlsx"
 #download_filename = "Curva_Soberano_" + FechaInicioC + ".xlsx"
@@ -78,7 +70,7 @@ driver.execute_script(f"arguments[0].value = '{TipoCurva}';", curve_picker_input
 curve_value = curve_picker_input.get_attribute("value")
 curve_value
 
-button_id = "btnBuscarInformacionHistorica"  # Reemplaza con el ID del botón de consulta si es diferente
+button_id = "btnBuscarInformacionHistorica" 
 consulta_button = driver.find_element(By.ID, button_id)
 time.sleep(5)
 consulta_button.click()
