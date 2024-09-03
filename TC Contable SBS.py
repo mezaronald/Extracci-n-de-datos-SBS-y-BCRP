@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Jul 18 13:40:59 2024
-
-@author: rmezaf
-"""
-
 
 from selenium import webdriver
 import requests
@@ -13,9 +6,9 @@ from selenium.webdriver.common.by import By
 import time
 from datetime import datetime, timedelta
 
-
+#Cambiar usuario y directorio a preferencia
 usuario = 'rmezaf'
-directorio = 'C:/Users/' + usuario + '/OneDrive - Ripley Corp/2022/08 Solicitudes/Tienda Ripley/TC/' 
+directorio = 'C:/Users/' + usuario + '/TC/'  
 
 
 # URL de la página
@@ -96,7 +89,3 @@ df.to_excel(directorio + 'TC Contable ' + fin_de_mes_str_2 + '.xlsx', index=Fals
 # Cerrar el navegador
 driver.quit()
 
-
-
-# Mostrar el DataFrame resultante
-print( df.iloc[-1])
