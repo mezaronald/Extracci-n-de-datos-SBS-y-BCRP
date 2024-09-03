@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Jul 24 09:52:37 2024
-
-@author: rmezaf
-"""
-
 
 from selenium import webdriver
 import requests
