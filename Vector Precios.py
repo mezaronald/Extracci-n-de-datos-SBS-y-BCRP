@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Jul 26 09:32:01 2024
-
-@author: rmezaf
-"""
-
 
 from selenium import webdriver
 import requests
@@ -17,14 +10,14 @@ import os
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 
-usuario = "rmezaf"
+usuario = "rmezaf" #Cambiar a preferencia
 fecha_consulta = datetime.datetime(2024, 9, 2)
 fecha_consultaA = fecha_consulta.strftime("%d/%m/%Y")
 fecha_consultaB = fecha_consulta.strftime("%y%m%d")
 
-
 # Define la ubicación y el nombre del archivo que deseas descargar
-download_directory = "C:\\Users\\"+ usuario +"\\OneDrive - Ripley Corp\\2022\\02 Mercado\\04 Inversiones\\Vector Precios\\"
+
+download_directory = "C:\\Users\\"+ usuario +"\\Vector Precios\\" 
 
 download_filename = "Vector SBS " + fecha_consultaB + ".xls"
 
@@ -64,7 +57,5 @@ time.sleep(6)
 downloaded_file_path = os.path.join(download_directory, "Renta Fija.xls")  # Ajusta el nombre si es necesario
 new_file_path = os.path.join(download_directory, download_filename)
 os.rename(downloaded_file_path, new_file_path)
-
-vector = pd.read_excel(download_directory + download_filename)
 
 driver.quit()
